@@ -22,6 +22,7 @@ modules:
     build-commands:
       - install -D run.sh /app/bin/camunda-modeler
       - install -Dm644 com.camunda.Modeler.desktop -t /app
+      - install -Dm644 com.camunda.Modeler.appdata.xml -t /app/share/appdata
       - install -D apply_extra -t /app/bin
       - mkdir /app/plugins
     sources:
@@ -49,3 +50,5 @@ modules:
           - exec /app/extra/share/camunda-modeler --no-sandbox "$@"
       - type: file
         path: com.camunda.Modeler.desktop
+      - type: file
+        path: com.camunda.Modeler.appdata.xml
