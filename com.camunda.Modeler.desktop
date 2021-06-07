@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=Camunda Modeler
+Keywords=bpmn;cmmn;dmn;form;modeler;camunda
+GenericName=Process Modeling Tool
+Type=Application
+Categories=Development
+Terminal=false
+StartupNotify=true
+StartupWMClass=camunda-modeler
+Exec=camunda-modeler
+MimeType=application/bpmn;application/cmmn;application/dmn;application/camunda-form
+Icon=com.camunda.Modeler

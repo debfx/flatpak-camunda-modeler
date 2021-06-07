@@ -1,0 +1,50 @@
+app-id: com.camunda.Modeler
+branch: stable
+runtime: org.freedesktop.Platform
+runtime-version: '20.08'
+sdk: org.freedesktop.Sdk
+command: camunda-modeler
+finish-args:
+  - --share=ipc
+  - --share=network
+  - --socket=x11
+
+add-extensions:
+  com.camunda.Modeler.Plugin:
+    directory: plugins
+    subdirectories: true
+    no-autodownload: true
+    autodelete: true
+
+modules:
+  - name: modeler
+    buildsystem: simple
+    build-commands:
+      - install -D run.sh /app/bin/camunda-modeler
+      - install -Dm644 com.camunda.Modeler.desktop -t /app/share/applications
+      - install -D apply_extra -t /app/bin
+      - mkdir /app/plugins
+    sources:
+      - type: script
+        dest-filename: apply_extra
+        commands:
+          - tar xf camunda-modeler.tar.gz
+          - rm camunda-modeler.tar.gz
+          - mkdir share
+          - mv camunda-modeler-*/* share/
+          - rmdir camunda-modeler-*
+          - install -Dm644 share/support/icon_128.png export/share/icons/hicolor/128x128/apps/com.camunda.Modeler.png
+          - ln -s /app/plugins share/plugins
+      - type: extra-data
+        filename: camunda-modeler.tar.gz
+        only-arches: [x86_64]
+        url: https://downloads.camunda.cloud/release/camunda-modeler/4.8.1/camunda-modeler-4.8.1-linux-x64.tar.gz
+        sha256: 9414fe6a736cbcd4f938e9df25014dff975862b3c19ab7054a7d68161c66d587
+        size: 126661144
+      - type: script
+        dest-filename: run.sh
+        commands:
+          - cd /app/extra/share
+          - exec /app/extra/share/camunda-modeler --no-sandbox "$@"
+      - type: file
+        path: com.camunda.Modeler.desktop
