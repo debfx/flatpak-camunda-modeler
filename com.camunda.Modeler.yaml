@@ -21,7 +21,7 @@ modules:
     buildsystem: simple
     build-commands:
       - install -D run.sh /app/bin/camunda-modeler
-      - install -Dm644 com.camunda.Modeler.desktop -t /app/share/applications
+      - install -Dm644 com.camunda.Modeler.desktop -t /app
       - install -D apply_extra -t /app/bin
       - mkdir /app/plugins
     sources:
@@ -34,6 +34,7 @@ modules:
           - mv camunda-modeler-*/* share/
           - rmdir camunda-modeler-*
           - install -Dm644 share/support/icon_128.png export/share/icons/hicolor/128x128/apps/com.camunda.Modeler.png
+          - install -Dm644 /app/com.camunda.Modeler.desktop -t export/share/applications
           - ln -s /app/plugins share/plugins
       - type: extra-data
         filename: camunda-modeler.tar.gz
