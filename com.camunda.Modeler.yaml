@@ -8,6 +8,7 @@ finish-args:
   - --share=ipc
   - --share=network
   - --socket=x11
+  - --filesystem=home
 
 add-extensions:
   com.camunda.Modeler.Plugin:
