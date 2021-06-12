@@ -6,6 +6,7 @@ base: org.electronjs.Electron2.BaseApp
 base-version: '20.08'
 sdk: org.freedesktop.Sdk
 command: camunda-modeler
+separate-locales: false
 finish-args:
   - --share=ipc
   - --share=network
