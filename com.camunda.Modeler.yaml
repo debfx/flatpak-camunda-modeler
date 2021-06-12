@@ -2,6 +2,8 @@ app-id: com.camunda.Modeler
 branch: stable
 runtime: org.freedesktop.Platform
 runtime-version: '20.08'
+base: org.electronjs.Electron2.BaseApp
+base-version: '20.08'
 sdk: org.freedesktop.Sdk
 command: camunda-modeler
 finish-args:
@@ -48,7 +50,7 @@ modules:
         dest-filename: run.sh
         commands:
           - cd /app/extra/share
-          - exec /app/extra/share/camunda-modeler --no-sandbox "$@"
+          - exec zypak-wrapper /app/extra/share/camunda-modeler "$@"
       - type: file
         path: com.camunda.Modeler.desktop
       - type: file
