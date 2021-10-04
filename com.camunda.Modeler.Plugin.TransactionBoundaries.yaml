@@ -2,7 +2,7 @@ app-id: com.camunda.Modeler.Plugin.TransactionBoundaries
 branch: stable
 runtime: com.camunda.Modeler
 runtime-version: stable
-sdk: org.freedesktop.Sdk//20.08
+sdk: org.freedesktop.Sdk//21.08
 build-extension: true
 separate-locales: false
 appstream-compose: false
