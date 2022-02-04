@@ -45,9 +45,9 @@ modules:
       - type: extra-data
         filename: camunda-modeler.tar.gz
         only-arches: [x86_64]
-        url: https://downloads.camunda.cloud/release/camunda-modeler/4.11.1/camunda-modeler-4.11.1-linux-x64.tar.gz
-        sha256: 16645c8d98dfa11cef1a28a290de6800f48c873630d3303b01df9fd2dfde7e07
-        size: 136076657
+        url: https://downloads.camunda.cloud/release/camunda-modeler/4.12.0/camunda-modeler-4.12.0-linux-x64.tar.gz
+        sha256: 067dadb89be7d1612d35bfc02dde94a221751b6402dcbf32e55ddd86bdd93383
+        size: 136551484
       - type: script
         dest-filename: run.sh
         commands:
